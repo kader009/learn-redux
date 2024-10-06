@@ -1,4 +1,3 @@
-
 const employ1 = { FirstName: 'kader', LastName: 'molla' };
 const employ2 = { FirstName: 'abdul', LastName: 'rasel' };
 
@@ -45,4 +44,17 @@ function createCounter() {
 
 const counterResult = createCounter();
 
+// new closure approch
 
+function attackOnTitan() {
+  const character1 = 'Amir';
+  return () => {
+    const character2 = 'Faisal';
+    return () => {
+      const character3 = 'David';
+      return [character1, character2, character3];
+    };
+  };
+}
+
+console.log(attackOnTitan()()());
