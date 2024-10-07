@@ -57,4 +57,36 @@ function attackOnTitan() {
   };
 }
 
-console.log(attackOnTitan()()());
+// console.log(attackOnTitan()()());
+
+const fetchData = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve({ name: 'Kader', age: 29 });
+    }, 1000);
+  });
+};
+
+const getData = async () => {
+  try {
+    const data = await fetchData();
+    console.log(data);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// getData();
+
+const students = [
+  { name: 'Ali', grade: 'A+' },
+  { name: 'Ahmed', grade: 'A' },
+  { name: 'Anas', grade: 'A-' },
+];
+
+const Group = Object.groupBy(students, (student) => student.grade);
+// console.log(Group);
+
+const firstOrder = () => {
+  console.log('I am a first order function!');
+};
