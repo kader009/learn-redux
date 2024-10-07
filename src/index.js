@@ -94,5 +94,79 @@ const firstOrder = () => {
 const numbers = [1, 2, 3, 4, 5];
 
 const sum = numbers.reduce((total, num) => total * num,0);
+// console.log(sum);
 
-console.log(sum);
+function deepClone(value, seen = new Map()) {
+  // Handle primitive types and functions directly
+  if (typeof value !== 'object' || value === null) {
+    return value;
+  }
+
+  // Handle circular references
+  if (seen.has(value)) {
+    return seen.get(value);
+  }
+
+  // Handle Date objects
+  if (value instanceof Date) {
+    return new Date(value);
+  }
+
+  // Handle Array objects
+  if (Array.isArray(value)) {
+    const arrCopy = [];
+    seen.set(value, arrCopy); // Track the array for circular references
+    value.forEach((item, index) => {
+      arrCopy[index] = deepClone(item, seen);
+    });
+    return arrCopy;
+  }
+
+  // Handle Set objects
+  if (value instanceof Set) {
+    const setCopy = new Set();
+    seen.set(value, setCopy); // Track the Set for circular references
+    value.forEach((item) => {
+      setCopy.add(deepClone(item, seen));
+    });
+    return setCopy;
+  }
+
+  // Handle Map objects
+  if (value instanceof Map) {
+    const mapCopy = new Map();
+    seen.set(value, mapCopy); // Track the Map for circular references
+    value.forEach((val, key) => {
+      mapCopy.set(deepClone(key, seen), deepClone(val, seen));
+    });
+    return mapCopy;
+  }
+
+  // Handle objects
+  const objCopy = {};
+  seen.set(value, objCopy); // Track the object for circular references
+  Object.keys(value).forEach((key) => {
+    objCopy[key] = deepClone(value[key], seen);
+  });
+  return objCopy;
+}
+
+// Test the deepClone function with various data types, including circular references
+const originalObject = {
+  name: "FoodLane",
+  createdAt: new Date(),
+  items: ["Burger", "Pizza", "Pasta"],
+  nested: {
+    number: 42,
+    fun: () => "Hello, World!",
+  },
+};
+
+// Create a circular reference
+originalObject.self = originalObject;
+
+const clonedObject = deepClone(originalObject);
+
+console.log(clonedObject);
+
+
