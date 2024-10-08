@@ -189,7 +189,10 @@ function countUniqueCharacters(string, memo = {}) {
 
 try {
   const result = countUniqueCharacters('kader molla');
-  console.log('unique character is:', result);
+  // console.log('unique character is:', result);
 } catch (error) {
   console.log(error.message);
 }
+
+let a = 100;
+{let a = 10;}
