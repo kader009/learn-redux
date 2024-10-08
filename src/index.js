@@ -239,6 +239,29 @@ function countDown(start) {
 
 // const timer = setInterval(countDown(5), 1000);
 
-setTimeout(() =>{console.log('i am settimeout')},2000)
+setTimeout(() => {}, 2000);
+
+const original = { a: 1, b: { c: 2 } };
+
+const shallowCopy = {...original}
+// console.log(shallowCopy);
+
+const deepCopy = JSON.parse(JSON.stringify(original))
+// console.log(deepCopy);
+
+
+function reverseString(str) {
+  const reverse = str.split('').reverse().join('')
+  return reverse;
+}
+// console.log(reverseString("hello"));
+
+
+function factorialize(num) {
+  const factorial = num * num;
+  return factorial;
+}
+console.log(factorialize(5)); // Expected output: 120
+
 
 
