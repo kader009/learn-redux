@@ -93,7 +93,7 @@ const firstOrder = () => {
 
 const numbers = [1, 2, 3, 4, 5];
 
-const sum = numbers.reduce((total, num) => total * num,0);
+const sum = numbers.reduce((total, num) => total * num, 0);
 // console.log(sum);
 
 function deepClone(value, seen = new Map()) {
@@ -153,12 +153,12 @@ function deepClone(value, seen = new Map()) {
 
 // Test the deepClone function with various data types, including circular references
 const originalObject = {
-  name: "FoodLane",
+  name: 'FoodLane',
   createdAt: new Date(),
-  items: ["Burger", "Pizza", "Pasta"],
+  items: ['Burger', 'Pizza', 'Pasta'],
   nested: {
     number: 42,
-    fun: () => "Hello, World!",
+    fun: () => 'Hello, World!',
   },
 };
 
@@ -167,6 +167,29 @@ originalObject.self = originalObject;
 
 const clonedObject = deepClone(originalObject);
 
-console.log(clonedObject);
+function countUniqueCharacters(string, memo = {}) {
+  if (typeof string !== 'string') {
+    throw new Error('Input must be a string');
+  }
 
+  if (string.length === 0) return 0;
 
+  const chart = string[0];
+
+  if (!memo[chart]) {
+    memo[chart] = 0;
+  } else {
+    memo[chart]++;
+  }
+
+  countUniqueCharacters(string.substring(1), memo);
+
+  return Object.keys(memo).length;
+}
+
+try {
+  const result = countUniqueCharacters('kader molla');
+  console.log('unique character is:', result);
+} catch (error) {
+  console.log(error.message);
+}
