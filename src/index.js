@@ -212,3 +212,33 @@ function outerFunction() {
 const outerfunctionAccess = outerFunction();
 
 // outerfunctionAccess()
+
+function deLayedCounter(message, delay) {
+  return function () {
+    setTimeout(() => {
+      console.log(message);
+    }, delay);
+  };
+}
+
+const countDelay = deLayedCounter('message show after 1 second', 1000);
+
+// countDelay()
+
+function countDown(start) {
+  let count = start;
+
+  return function () {
+    if (count > 0) {
+      console.log(count--);
+    } else {
+      console.log(`countDown finished`);
+    }
+  };
+}
+
+// const timer = setInterval(countDown(5), 1000);
+
+setTimeout(() =>{console.log('i am settimeout')},2000)
+
+
