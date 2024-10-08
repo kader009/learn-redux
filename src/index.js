@@ -195,4 +195,20 @@ try {
 }
 
 let a = 100;
-{let a = 10;}
+{
+  let a = 10;
+}
+
+function outerFunction() {
+  const outerVariable = 'I am outerVariable';
+
+  function InnerFunction() {
+    console.log(outerVariable);
+  }
+
+  return InnerFunction;
+}
+
+const outerfunctionAccess = outerFunction();
+
+// outerfunctionAccess()
