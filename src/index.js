@@ -265,10 +265,10 @@ function factorialize(num) {
 // console.log(factorialize(5));
 
 const person = {
-  greet: function () {
-    return 'Hellow!';
+  greet: function (name) {
+    return `Hellow! ${name}`;
   },
 };
 
 const friend = Object.create(person); //todo: create a new object here
-console.log(friend.greet());
+console.log(friend.greet('kader'));
