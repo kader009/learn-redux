@@ -13,7 +13,7 @@ function Banner() {
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
-        className="mySwiper h-screen"
+        className="mySwiper h-screen transition-all duration-200 ease-in"
       >
         <SwiperSlide className="flex items-center justify-center bg-red-500 text-white text-2xl h-full">
           Slide 1

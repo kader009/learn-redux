@@ -280,8 +280,14 @@ function sums(num1, num2) {
 }
 
 const gets = sums(10, 10);
-// console.log(gets)
+// console.log(gets);
 
 setTimeout(() => {
   // console.log(`i am printing 1 second later`);
 }, [1000]);
+
+for (var i = 0; i < 3; i++) {
+  setTimeout(() => {
+    console.log(i);
+  }, 1);
+}
