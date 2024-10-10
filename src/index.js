@@ -271,4 +271,17 @@ const person = {
 };
 
 const friend = Object.create(person); //todo: create a new object here
-console.log(friend.greet('kader'));
+// console.log(friend.greet('kader'));
+
+function sums(num1, num2) {
+  num1 = 100;
+  num2 = 200;
+  return arguments[0] + arguments[1];
+}
+
+const gets = sums(10, 10);
+// console.log(gets)
+
+setTimeout(() => {
+  // console.log(`i am printing 1 second later`);
+}, [1000]);

@@ -1,6 +1,8 @@
 // import Counter from './pages/Counter';
 // import FoodData from './pages/FoodData';
-import Images from './pages/Images';
+// import Images from './pages/Images';
+
+import Increase from "./pages/Increase";
 
 
 const App = () => {
@@ -9,7 +11,8 @@ const App = () => {
     <>
       {/* <Counter/>
       <FoodData /> */}
-      <Images/>
+      {/* <Images/> */}
+      <Increase/>
     </>
   );
 };
