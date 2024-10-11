@@ -318,15 +318,13 @@ function allSet(a) {
 
 // console.log(allSet(2)(3)(4)(5));
 
+const object = { values: 29 };
 
-const object = { values : 29}
-
-function objectValue(){
+function objectValue() {
   console.log(this.values);
 }
 
-objectValue.call(object)
-objectValue.apply(object)
+function calculate(...numbers) {
+  return numbers.reduce((total, num) => total + num, 0);
+}
 
-const getObject = objectValue.bind(object)
-getObject()
