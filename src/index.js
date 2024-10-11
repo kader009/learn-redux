@@ -328,3 +328,11 @@ function calculate(...numbers) {
   return numbers.reduce((total, num) => total + num, 0);
 }
 
+import EventEmitter from 'events';
+const myEmitter = new EventEmitter();
+
+myEmitter.on('event', () => {
+  console.log('An event occurred!');
+});
+
+myEmitter.emit('event');
