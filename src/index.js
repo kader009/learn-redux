@@ -316,4 +316,17 @@ function allSet(a) {
   };
 }
 
-console.log(allSet(2)(3)(4)(5));
+// console.log(allSet(2)(3)(4)(5));
+
+
+const object = { values : 29}
+
+function objectValue(){
+  console.log(this.values);
+}
+
+objectValue.call(object)
+objectValue.apply(object)
+
+const getObject = objectValue.bind(object)
+getObject()
