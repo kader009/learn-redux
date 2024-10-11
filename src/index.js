@@ -288,6 +288,23 @@ setTimeout(() => {
 
 for (var i = 0; i < 3; i++) {
   setTimeout(() => {
-    console.log(i);
+    // console.log(i);
   }, 1);
 }
+
+class User{
+  #name;
+  constructor(name){
+    this.#name = name
+  }
+
+  getName (){
+    return this.#name
+  }
+}
+
+const user = new User('Abdul')
+console.log(user.getName());
+
+
+
