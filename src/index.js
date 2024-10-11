@@ -292,19 +292,28 @@ for (var i = 0; i < 3; i++) {
   }, 1);
 }
 
-class User{
+class User {
   #name;
-  constructor(name){
-    this.#name = name
+  constructor(name) {
+    this.#name = name;
   }
 
-  getName (){
-    return this.#name
+  getName() {
+    return this.#name;
   }
 }
 
-const user = new User('Abdul')
-console.log(user.getName());
+const user = new User('Abdul');
+// console.log(user.getName());
 
+function allSet(a) {
+  return function (b) {
+    return function (c) {
+      return function (d) {
+        return a + b + c + d;
+      };
+    };
+  };
+}
 
-
+console.log(allSet(2)(3)(4)(5));
