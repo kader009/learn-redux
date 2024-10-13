@@ -3,9 +3,10 @@
 // import Images from './pages/Images';
 
 // import Increase from "./pages/Increase";
-// import Tasks from "./pages/Tasks";
-import Banner from "./pages/Banner";
+import Tasks from "./pages/Tasks";
+// import Banner from "./pages/Banner";
 
+// new comment here
 
 const App = () => {
 
@@ -15,8 +16,8 @@ const App = () => {
       <FoodData /> */}
       {/* <Images/> */}
       {/* <Increase/> */}
-      {/* <Tasks/> */}
-      <Banner/>
+      <Tasks/>
+      {/* <Banner/> */}
     </>
   );
 };
